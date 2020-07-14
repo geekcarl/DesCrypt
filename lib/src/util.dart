@@ -116,38 +116,4 @@ class Utils {
     });
     return Utils.hexToBytes(hex);
   }
-
-  static Uint8List padding(Uint8List encrypt) {
-    if (encrypt == null || encrypt.isEmpty) {
-      return encrypt;
-    }
-    if (encrypt.length % 8 != 0) {
-      Uint8List padded = Uint8List(encrypt.length + 8 - (encrypt.length % 8));
-      for (int i = 0; i < encrypt.length; i++) {
-        padded[i] = encrypt[i];
-      }
-      return padded;
-    }
-    return encrypt;
-  }
-
-//  /**
-//   * @return
-//   */
-//  public static byte[] padding(byte[] encrypt) {
-//  if (encrypt == null || encrypt.length == 0) {
-//  return encrypt;
-//  }
-//
-//  // not a multiple of 8
-//  if (encrypt.length % 8 != 0) {
-//  //create a new array with a size which is a multiple of 8
-//  byte[] padded = new byte[encrypt.length + 8 - (encrypt.length % 8)];
-//
-//  //copy the old array into it
-//  System.arraycopy(encrypt, 0, padded, 0, encrypt.length);
-//  encrypt = padded;
-//  }
-//  return encrypt;
-//  }
 }
